@@ -10,14 +10,11 @@ public class GameController : MonoBehaviour
     private DifficultySO currentDiff;
     public int diff;
     string sceneToLoad = "SampleScene";
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     void Update()
     {
+        
         
     }
     public void EasyButtonClick()
