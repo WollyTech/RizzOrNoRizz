@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
@@ -17,9 +18,9 @@ public class GameManager : MonoBehaviour
     public TMP_Text bB;
     public TMP_Text bC;
     public TMP_Text bD;
-    public int score = 0;
+
     public int index = 0;
-    public int round = 1;
+    public int round = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +34,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (round == 2)
+        {
+            SceneManager.LoadScene("FinalScene");
+        }
     }
     void changeText(int index)
     {
@@ -50,7 +54,7 @@ public class GameManager : MonoBehaviour
     }
     public void ClickButtonA()
     {
-        score += AllQuestions[index].A.Value;
+        currentDiff.score += AllQuestions[index].A.Value;
         AllQuestions.RemoveAt(index);
         index = Random.Range(0, AllQuestions.Count);
 
@@ -60,7 +64,7 @@ public class GameManager : MonoBehaviour
     }
     public void ClickButtonB()
     {
-        score += AllQuestions[index].B.Value;
+        currentDiff.score += AllQuestions[index].B.Value;
         AllQuestions.RemoveAt(index);
         index = Random.Range(0, AllQuestions.Count);
 
@@ -70,7 +74,7 @@ public class GameManager : MonoBehaviour
     }
     public void ClickButtonC()
     {
-        score += AllQuestions[index].C.Value;
+        currentDiff.score += AllQuestions[index].C.Value;
         AllQuestions.RemoveAt(index);
         index = Random.Range(0, AllQuestions.Count);
 
@@ -81,7 +85,7 @@ public class GameManager : MonoBehaviour
     }
     public void ClickButtonD()
     {
-        score += AllQuestions[index].D.Value;
+        currentDiff.score += AllQuestions[index].D.Value;
         AllQuestions.RemoveAt(index);
         index = Random.Range(0, AllQuestions.Count);
 
