@@ -10,7 +10,6 @@ public struct Answer
 public struct Question
 {
     public string whatTheyAsked { get; set; }
-
 }
 public struct FullQuestion
 {
@@ -30,7 +29,6 @@ public class PopulateQuestions : MonoBehaviour
         for (int i = 0; i < QuestionAmount; i++)
         {
             AllQuestions.Add(ReturnQuestion(i));
-            int a = 0;
         }
     }
     FullQuestion ReturnQuestion(int index)
@@ -52,10 +50,6 @@ public class PopulateQuestions : MonoBehaviour
             newQuestion.C = new Answer { CurrentAnswer = "Die", Value = 1 };
             newQuestion.D = new Answer { CurrentAnswer = "Cry", Value = 1 };
         }
-
-        
-
-
         return newQuestion;
     }
 
