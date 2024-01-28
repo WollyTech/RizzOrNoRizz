@@ -52,17 +52,34 @@ public class GameManager : MonoBehaviour
             //set all open screens to inactive and final score to active
             promptUI.SetActive(false); scoreUI.SetActive(false);
             finalScoreUI.SetActive(true);
-            finalScoreText.text = "Score = " + currentDiff.score + "RP";
-            if (currentDiff.score >= 1250)
-                gradeText.text = "Ugh, get away from me creep";
-            if (currentDiff.score >= 1500)
-                gradeText.text = "I guess I'll go out with you";
-            if (currentDiff.score >= 1750)
-                gradeText.text = "Rizzy";
-            if (currentDiff.score >= 2000)
-                gradeText.text = "Rizzlord";
-            if (currentDiff.score >= 2250)
-                gradeText.text = "Rizzgod";
+            if (currentDiff.difficulty == 1)
+            {
+                finalScoreText.text = "Score = " + currentDiff.score + "RP";
+                if (currentDiff.score >= 1250)
+                    gradeText.text = "Grade: Ugh, get away from me creep";
+                if (currentDiff.score >= 1500)
+                    gradeText.text = "Grade: I guess I'll go out with you";
+                if (currentDiff.score >= 1750)
+                    gradeText.text = "Grade: Rizzy";
+                if (currentDiff.score >= 2000)
+                    gradeText.text = "Grade: Rizzlord";
+                if (currentDiff.score >= 2250)
+                    gradeText.text = "Grade: Rizzgod";
+            }
+            else //HARD MODE
+            {
+                finalScoreText.text = "Score = " + currentDiff.score + "RP";
+                if (currentDiff.score <= 1250)
+                    gradeText.text = "Grade: Ugh, get away from me creep";
+                if (currentDiff.score >= 1500)
+                    gradeText.text = "Grade: I guess I'll go out with you";
+                if (currentDiff.score >= 1750)
+                    gradeText.text = "Grade: Rizzy";
+                if (currentDiff.score >= 2000)
+                    gradeText.text = "Grade: Rizzlord";
+                if (currentDiff.score >= 2250)
+                    gradeText.text = "Grade: Rizzgod";
+            }
         }
     }
 
@@ -100,8 +117,8 @@ public class GameManager : MonoBehaviour
     }
     public void ClickButtonC()
     {
-        currentDiff.score += AllQuestions[index].C.Value;
-        scoreText.text = "+" + AllQuestions[index].C.Value + "RP";
+        currentDiff.score += AllQuestions[index].C.Value / currentDiff.difficulty;
+        scoreText.text = "+" + AllQuestions[index].C.Value / currentDiff.difficulty + "RP";
     }
     public void ClickButtonD()
     {
@@ -115,6 +132,10 @@ public class GameManager : MonoBehaviour
     }
     public void Restart()
     {
-        SceneManager.LoadScene("Gameplay");
+        if (currentDiff.difficulty == 1) 
+            SceneManager.LoadScene("EasyMode");
+        if (currentDiff.difficulty == 2)
+            SceneManager.LoadScene("HardMode");
+        
     }
 }

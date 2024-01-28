@@ -9,9 +9,24 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private DifficultySO currentDiff;
     public int diff;
-    string sceneToLoad = "Gameplay";
+    string easyScene = "EasyMode";
+    string hardScene = "HardMode";
+
+    public GameObject mainMenuUI;
+    public GameObject dateSelectUI;
+    public GameObject eCDUI;
+    public GameObject hCDUI;
+    public GameObject highScoreUI;
 
     // Update is called once per frame
+    private void Start()
+    {
+        mainMenuUI.SetActive(true);
+        dateSelectUI.SetActive(false);
+        eCDUI.SetActive(false);
+        hCDUI.SetActive(false);
+        highScoreUI.SetActive(false);
+    }
     void Update()
     {
         
@@ -20,11 +35,15 @@ public class GameController : MonoBehaviour
     public void EasyButtonClick()
     {
         currentDiff.difficulty = 1;
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene(easyScene);
     }
     public void HardButtonClick()
     {
         currentDiff.difficulty = 2;
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene(hardScene);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
