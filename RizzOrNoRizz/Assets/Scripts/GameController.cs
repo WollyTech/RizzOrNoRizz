@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private DifficultySO currentDiff;
     public int diff;
-    string sceneToLoad = "SampleScene";
+    string sceneToLoad = "Gameplay";
 
     // Update is called once per frame
     void Update()

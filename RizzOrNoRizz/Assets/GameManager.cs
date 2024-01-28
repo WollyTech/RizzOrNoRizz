@@ -1,15 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
+    using System.Collections.Generic;
+    using TMPro;
+    using UnityEngine;
+    using UnityEngine.Rendering;
+    using UnityEngine.SceneManagement;
+    using UnityEngine.SocialPlatforms.Impl;
+    using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour
-{
+    {
     [SerializeField]
     private DifficultySO currentDiff;
     public TMP_Text Prompt;
@@ -19,16 +19,28 @@ public class GameManager : MonoBehaviour
     public TMP_Text bC;
     public TMP_Text bD;
 
+    public TMP_Text scoreText;
+    public TMP_Text finalScoreText;
+
     public int index = 0;
     public int round = 0;
+
+    public GameObject promptUI;
+    public GameObject scoreUI;
+    public GameObject finalScoreUI;
+
     // Start is called before the first frame update
     void Start()
     {
         AllQuestions = this.GetComponent<PopulateQuestions>().AllQuestions;
+        changeText();
 
-        index = Random.Range(0, AllQuestions.Count);
+        round = 0;
+        currentDiff.score = 0;
 
-        changeText(index);
+        promptUI.SetActive(true);
+        scoreUI.SetActive(false);
+        finalScoreUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,61 +48,53 @@ public class GameManager : MonoBehaviour
     {
         if (round == 2)
         {
-            SceneManager.LoadScene("FinalScene");
+            //set all open screens to inactive and final score to active
+            promptUI.SetActive(false); scoreUI.SetActive(false);
+            finalScoreUI.SetActive(true);
+            finalScoreText.text = "Score = " + currentDiff.score + "RP";
         }
     }
-    void changeText(int index)
+    void changeText()
     {
-        Prompt.text = AllQuestions[index].Ask.whatTheyAsked;
+        if (round < AllQuestions.Count)
+        {
+            index = Random.Range(0, AllQuestions.Count);
 
-        bA.text = AllQuestions[index].A.CurrentAnswer;
+            Prompt.text = AllQuestions[index].Ask.whatTheyAsked;
+            bA.text = AllQuestions[index].A.CurrentAnswer;
+            bB.text = AllQuestions[index].B.CurrentAnswer;
+            bC.text = AllQuestions[index].C.CurrentAnswer;
+            bD.text = AllQuestions[index].D.CurrentAnswer;
 
-        bB.text = AllQuestions[index].B.CurrentAnswer;
-
-        bC.text = AllQuestions[index].C.CurrentAnswer;
-
-        bD.text = AllQuestions[index].D.CurrentAnswer;
-
+            Debug.Log(bA.text);
+        }
     }
+
     public void ClickButtonA()
     {
         currentDiff.score += AllQuestions[index].A.Value;
-        AllQuestions.RemoveAt(index);
-        index = Random.Range(0, AllQuestions.Count);
-
-        changeText(index);
-        AllQuestions.RemoveAt(index);
-        round++;
+        scoreText.text = "+" + AllQuestions[index].A.Value + "RP";
     }
     public void ClickButtonB()
     {
         currentDiff.score += AllQuestions[index].B.Value;
-        AllQuestions.RemoveAt(index);
-        index = Random.Range(0, AllQuestions.Count);
-
-        changeText(index);
-        AllQuestions.RemoveAt(index);
-        round++;
+        scoreText.text = "+" + AllQuestions[index].B.Value + "RP";
     }
     public void ClickButtonC()
     {
         currentDiff.score += AllQuestions[index].C.Value;
-        AllQuestions.RemoveAt(index);
-        index = Random.Range(0, AllQuestions.Count);
-
-        changeText(index);
-        AllQuestions.RemoveAt(index);
-        round++;
-        
+        scoreText.text = "+" + AllQuestions[index].C.Value + "RP";
     }
     public void ClickButtonD()
     {
         currentDiff.score += AllQuestions[index].D.Value;
-        AllQuestions.RemoveAt(index);
-        index = Random.Range(0, AllQuestions.Count);
+        scoreText.text = "+" + AllQuestions[index].D.Value + "RP";
+    }
 
-        changeText(index);
-        AllQuestions.RemoveAt(index);
+    public void newRound()
+    {
         round++;
+        AllQuestions.RemoveAt(index);
+        changeText();
     }
 }
