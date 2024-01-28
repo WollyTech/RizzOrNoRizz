@@ -128,6 +128,19 @@ public class GameManager : MonoBehaviour
 
     public void GoToMenu()
     {
+        for (int i = 0; i < 5; i++)
+        {
+            if (currentDiff.score == 0)
+            {
+                currentDiff.index = i;
+                break;
+            }
+            else
+            {
+                //currentDiff.index = i;
+            }
+        }
+
         SceneManager.LoadScene("Menu");
     }
     public void Restart()

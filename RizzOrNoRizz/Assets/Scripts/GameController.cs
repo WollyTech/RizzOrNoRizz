@@ -18,6 +18,22 @@ public class GameController : MonoBehaviour
     public GameObject hCDUI;
     public GameObject highScoreUI;
 
+    private void Awake()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (currentDiff.score == 0)
+            {
+                currentDiff.index = i ;
+                Debug.Log(currentDiff.index);
+                break;
+            }
+            else
+            {
+                //currentDiff.index = i;
+            }
+        }
+    }
     // Update is called once per frame
     private void Start()
     {
@@ -26,10 +42,11 @@ public class GameController : MonoBehaviour
         eCDUI.SetActive(false);
         hCDUI.SetActive(false);
         highScoreUI.SetActive(false);
+        
     }
     void Update()
     {
-        
+
         
     }
     public void EasyButtonClick()
@@ -45,5 +62,9 @@ public class GameController : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void HighScoreButtonClick()
+    {
+        SceneManager.LoadScene("HighScore");
     }
 }
