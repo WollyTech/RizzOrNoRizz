@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public TMP_Text scoreText;
     public TMP_Text finalScoreText;
+    public TMP_Text gradeText;
 
     public int index = 0;
     public int round = 0;
@@ -46,13 +47,30 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (round == 2)
+        if (round == 5)
         {
             //set all open screens to inactive and final score to active
             promptUI.SetActive(false); scoreUI.SetActive(false);
             finalScoreUI.SetActive(true);
             finalScoreText.text = "Score = " + currentDiff.score + "RP";
+            if (currentDiff.score >= 1250)
+                gradeText.text = "Ugh, get away from me creep";
+            if (currentDiff.score >= 1500)
+                gradeText.text = "I guess I'll go out with you";
+            if (currentDiff.score >= 1750)
+                gradeText.text = "Rizzy";
+            if (currentDiff.score >= 2000)
+                gradeText.text = "Rizzlord";
+            if (currentDiff.score >= 2250)
+                gradeText.text = "Rizzgod";
         }
+    }
+
+    public void newRound()
+    {
+        round++;
+        AllQuestions.RemoveAt(index);
+        changeText();
     }
     void changeText()
     {
@@ -91,10 +109,12 @@ public class GameManager : MonoBehaviour
         scoreText.text = "+" + AllQuestions[index].D.Value + "RP";
     }
 
-    public void newRound()
+    public void GoToMenu()
     {
-        round++;
-        AllQuestions.RemoveAt(index);
-        changeText();
+        SceneManager.LoadScene("Menu");
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene("Gameplay");
     }
 }

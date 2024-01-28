@@ -26,6 +26,8 @@ public class PopulateQuestions : MonoBehaviour
     const int QuestionAmount = 10;
     public void Awake()
     {
+        AllQuestions.Clear();
+
         for (int i = 0; i < QuestionAmount; i++)
         {
             AllQuestions.Add(ReturnQuestion(i));
@@ -116,5 +118,13 @@ public class PopulateQuestions : MonoBehaviour
         }
         return newQuestion;
     }
+    public void resetList()
+    {
+        AllQuestions.Clear();
 
+        for (int i = 0; i < QuestionAmount; i++)
+        {
+            AllQuestions.Add(ReturnQuestion(i));
+        }
+    }
 }
