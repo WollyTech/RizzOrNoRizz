@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public List<Sprite> barsLevels;
     public Image rizzometer;
+    public List<Sprite> dateLevels;
+    public Image dateImg;
 
     public int index = 0;
     public int round = 0;
@@ -64,15 +66,26 @@ public class GameManager : MonoBehaviour
             {
                 finalScoreText.text = "Score = " + currentDiff.score + "RP";
                 if (currentDiff.score >= 1250)
+                {
                     gradeText.text = "Grade: Ugh, get away from me creep";
+
+                }
                 if (currentDiff.score >= 1500)
+                {
                     gradeText.text = "Grade: I guess I'll go out with you";
+                }
                 if (currentDiff.score >= 1750)
-                    gradeText.text = "Grade: Rizzy";
+                { 
+                    gradeText.text = "Grade: Rizzy"; 
+                }
                 if (currentDiff.score >= 2000)
+                {
                     gradeText.text = "Grade: Rizzlord";
+                }
                 if (currentDiff.score >= 2250)
+                {
                     gradeText.text = "Grade: Rizzgod";
+                }
             }
             else //HARD MODE
             {
@@ -122,14 +135,26 @@ public class GameManager : MonoBehaviour
         currentDiff.score += AllQuestions[index].A.Value;
         scoreText.text = "+" + AllQuestions[index].A.Value + "RP";
 
-        if (AllQuestions[index].A.Value <= 0) 
+        if (AllQuestions[index].A.Value <= 0)
+        {
             rizzometer.sprite = barsLevels[0];
+            dateImg.sprite = dateLevels[0];
+        }
         if (AllQuestions[index].A.Value >= 100)
+        {
             rizzometer.sprite = barsLevels[1];
+            dateImg.sprite = dateLevels[1];
+        }
         if (AllQuestions[index].A.Value >= 300)
+        {
             rizzometer.sprite = barsLevels[2];
+            dateImg.sprite = dateLevels[2];
+        }
         if (AllQuestions[index].A.Value >= 500)
+        {
             rizzometer.sprite = barsLevels[3];
+            dateImg.sprite = dateLevels[3];
+        }
     }
     public void ClickButtonB()
     {
