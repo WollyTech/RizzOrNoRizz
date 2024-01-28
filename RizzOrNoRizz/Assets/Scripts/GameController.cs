@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
+
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
     public int diff;
     string easyScene = "EasyMode";
     string hardScene = "HardMode";
+
+    public AudioSource Click1;
+    public AudioSource Click2;
 
     public GameObject mainMenuUI;
     public GameObject dateSelectUI;
@@ -51,6 +54,7 @@ public class GameController : MonoBehaviour
     }
     public void EasyButtonClick()
     {
+        Click1.Play();
         currentDiff.difficulty = 1;
         SceneManager.LoadScene(easyScene);
     }
@@ -61,6 +65,7 @@ public class GameController : MonoBehaviour
     }
     public void QuitGame()
     {
+        Click2.Play();
         Application.Quit();
     }
     public void HighScoreButtonClick()

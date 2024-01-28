@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
     public int index = 0;
     public int round = 0;
 
+    public AudioSource ClickA;
+    public AudioSource ClickB;
+    public AudioSource ClickC;
+    public AudioSource ClickD;
+
     public GameObject promptUI;
     public GameObject scoreUI;
     public GameObject finalScoreUI;
@@ -107,21 +112,26 @@ public class GameManager : MonoBehaviour
 
     public void ClickButtonA()
     {
+        ClickA.Play();
+        Debug.Log(ClickA.volume);
         currentDiff.score += AllQuestions[index].A.Value;
         scoreText.text = "+" + AllQuestions[index].A.Value + "RP";
     }
     public void ClickButtonB()
     {
+        ClickB.Play();
         currentDiff.score += AllQuestions[index].B.Value;
         scoreText.text = "+" + AllQuestions[index].B.Value + "RP";
     }
     public void ClickButtonC()
     {
+        ClickC.Play();
         currentDiff.score += AllQuestions[index].C.Value / currentDiff.difficulty;
         scoreText.text = "+" + AllQuestions[index].C.Value / currentDiff.difficulty + "RP";
     }
     public void ClickButtonD()
     {
+        ClickD.Play();
         currentDiff.score += AllQuestions[index].D.Value;
         scoreText.text = "+" + AllQuestions[index].D.Value + "RP";
     }
