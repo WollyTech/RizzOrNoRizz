@@ -16,8 +16,8 @@ EditorBuildSettings:
     guid: 287ae770476631b4f9172ea118d27ccb
   - enabled: 1
     path: Assets/Scenes/HardMode.unity
-    guid: 5030901ae80912c45b66a0ea66b70fbb
-  - enabled: 1
+    guid: b240a93c61f5b804da225e791a46cff4
+  - enabled: 0
     path: Assets/Scenes/HighScore.unity
     guid: 71957f8227d9ed74f9296fa37be45d63
   m_configObjects: {}
