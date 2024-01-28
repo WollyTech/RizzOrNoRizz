@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d93ac2b0aa2a1041be618eddad74bd2, type: 3}
   m_Name: New Difficulty SO
   m_EditorClassIdentifier: 
+  _difficulty: 2
+  _score: 5802000000000000000000000000000000000000
+  _index: 0

@@ -39,81 +39,81 @@ public class PopulateQuestions : MonoBehaviour
         switch (index)
         {
             case 0:
-                newQuestion.Ask = new Question { whatTheyAsked = "Yo" };
-                newQuestion.A = new Answer { CurrentAnswer = "Hey", Value = 500 };
-                newQuestion.B = new Answer { CurrentAnswer = "waddup", Value = 300 };
-                newQuestion.C = new Answer { CurrentAnswer = "ma ni***", Value = 100 };
-                newQuestion.D = new Answer { CurrentAnswer = "f*** off", Value = 0 };
+                newQuestion.Ask = new Question { whatTheyAsked = "Why don't skeletons fight each other?" };
+                newQuestion.A = new Answer { CurrentAnswer = "Because they lack the guts!", Value = 500 };
+                newQuestion.B = new Answer { CurrentAnswer = "Because they lack the muscle!", Value = 300 };
+                newQuestion.C = new Answer { CurrentAnswer = "Because they're too bony!", Value = 100 };
+                newQuestion.D = new Answer { CurrentAnswer = "Because they're just too brittle.", Value = 0 };
                 break;
             case 1:
-                newQuestion.Ask = new Question { whatTheyAsked = "Hi" };
-                newQuestion.A = new Answer { CurrentAnswer = "Bye", Value = 500 };
-                newQuestion.B = new Answer { CurrentAnswer = "Lie", Value = 300 };
-                newQuestion.C = new Answer { CurrentAnswer = "Die", Value = 100 };
-                newQuestion.D = new Answer { CurrentAnswer = "Cry", Value = 0 };
+                newQuestion.Ask = new Question { whatTheyAsked = "Why did the tomato turn red?" };
+                newQuestion.A = new Answer { CurrentAnswer = "Because it saw the salad dressing!", Value = 500 };
+                newQuestion.B = new Answer { CurrentAnswer = "Because it was embarrassed!", Value = 300 };
+                newQuestion.C = new Answer { CurrentAnswer = "Because it was too ripe!", Value = 100 };
+                newQuestion.D = new Answer { CurrentAnswer = "Because it was sun-kissed.", Value = 0 };
                 break;
             case 2:
-                newQuestion.Ask = new Question { whatTheyAsked = "Oli" };
-                newQuestion.A = new Answer { CurrentAnswer = "W", Value = 500 };
-                newQuestion.B = new Answer { CurrentAnswer = "O", Value = 300 };
-                newQuestion.C = new Answer { CurrentAnswer = "L", Value = 100 };
-                newQuestion.D = new Answer { CurrentAnswer = "E", Value = 1 };
+                newQuestion.Ask = new Question { whatTheyAsked = "Why don't scientists trust atoms?" };
+                newQuestion.A = new Answer { CurrentAnswer = "Because they make up everything!", Value = 500 };
+                newQuestion.B = new Answer { CurrentAnswer = "Because they're too small to see!", Value = 300 };
+                newQuestion.C = new Answer { CurrentAnswer = "Because they're always splitting!", Value = 100 };
+                newQuestion.D = new Answer { CurrentAnswer = "Because they're too unstable.", Value = 1 };
                 break;
             case 3:
-                newQuestion.Ask = new Question { whatTheyAsked = "Adrian" };
-                newQuestion.A = new Answer { CurrentAnswer = "A", Value = 500 };
-                newQuestion.B = new Answer { CurrentAnswer = "D", Value = 300 };
-                newQuestion.C = new Answer { CurrentAnswer = "R", Value = 100 };
-                newQuestion.D = new Answer { CurrentAnswer = "N", Value = 0 };
+                newQuestion.Ask = new Question { whatTheyAsked = "Why was the math book sad?" };
+                newQuestion.A = new Answer { CurrentAnswer = "Because it had too many problems!", Value = 500 };
+                newQuestion.B = new Answer { CurrentAnswer = "Because it couldn't solve its own equations!", Value = 300 };
+                newQuestion.C = new Answer { CurrentAnswer = "Because it was full of negative numbers!", Value = 100 };
+                newQuestion.D = new Answer { CurrentAnswer = "Because it missed their X.", Value = 0 };
                 break;
             case 4:
-                newQuestion.Ask = new Question { whatTheyAsked = "Tymek" };
-                newQuestion.A = new Answer { CurrentAnswer = "T", Value = 500 };
-                newQuestion.B = new Answer { CurrentAnswer = "M", Value = 300 };
-                newQuestion.C = new Answer { CurrentAnswer = "E", Value = 100 };
-                newQuestion.D = new Answer { CurrentAnswer = "K", Value = 0 };
+                newQuestion.Ask = new Question { whatTheyAsked = "Why did the chicken cross the road?" };
+                newQuestion.A = new Answer { CurrentAnswer = "Because it wanted to get to the other side!", Value = 500 };
+                newQuestion.B = new Answer { CurrentAnswer = "Because it heard there was free food!", Value = 300 };
+                newQuestion.C = new Answer { CurrentAnswer = "Because it was following its friends!", Value = 100 };
+                newQuestion.D = new Answer { CurrentAnswer = "Because it wanted to explore new territories.", Value = 0 };
                 break;
             case 5:
-                newQuestion.Ask = new Question { whatTheyAsked = "Jad" };
-                newQuestion.A = new Answer { CurrentAnswer = "F", Value = 500 };
-                newQuestion.B = new Answer { CurrentAnswer = "U", Value = 300 };
-                newQuestion.C = new Answer { CurrentAnswer = "H", Value = 100 };
-                newQuestion.D = new Answer { CurrentAnswer = "R", Value = 0 };
+                newQuestion.Ask = new Question { whatTheyAsked = "Why did the scarecrow win an award?\r\n" };
+                newQuestion.A = new Answer { CurrentAnswer = "Because it was outstanding in its field!", Value = 500 };
+                newQuestion.B = new Answer { CurrentAnswer = "Because it kept the birds away!", Value = 300 };
+                newQuestion.C = new Answer { CurrentAnswer = "Because it had the best hat!", Value = 100 };
+                newQuestion.D = new Answer { CurrentAnswer = "Because it was stuffed with personality.", Value = 0 };
                 break;
             case 6:
-                newQuestion.Ask = new Question { whatTheyAsked = "Monika" };
-                newQuestion.A = new Answer { CurrentAnswer = "M", Value = 500 };
-                newQuestion.B = new Answer { CurrentAnswer = "O", Value = 300 };
-                newQuestion.C = new Answer { CurrentAnswer = "N", Value = 100 };
-                newQuestion.D = new Answer { CurrentAnswer = "Y", Value = 0 };
+                newQuestion.Ask = new Question { whatTheyAsked = "Why don't oysters donate to charity?\r\n" };
+                newQuestion.A = new Answer { CurrentAnswer = "Because they're shellfish!", Value = 500 };
+                newQuestion.B = new Answer { CurrentAnswer = "Because they're too busy hiding!", Value = 300 };
+                newQuestion.C = new Answer { CurrentAnswer = "Because they don't have pockets!", Value = 100 };
+                newQuestion.D = new Answer { CurrentAnswer = "Because they're too busy clamming up.", Value = 0 };
                 break;
             case 7:
-                newQuestion.Ask = new Question { whatTheyAsked = "Julie" };
-                newQuestion.A = new Answer { CurrentAnswer = "J", Value = 500 };
-                newQuestion.B = new Answer { CurrentAnswer = "U", Value = 300 };
-                newQuestion.C = new Answer { CurrentAnswer = "L", Value = 100 };
-                newQuestion.D = new Answer { CurrentAnswer = "Y", Value = 0 };
+                newQuestion.Ask = new Question { whatTheyAsked = "Why did the golfer bring two pairs of pants?" };
+                newQuestion.A = new Answer { CurrentAnswer = "Because he might get a hole in one!", Value = 500 };
+                newQuestion.B = new Answer { CurrentAnswer = "Because he wanted to be prepared for any weather!", Value = 300 };
+                newQuestion.C = new Answer { CurrentAnswer = "Because he needed a spare in case he ripped one!", Value = 100 };
+                newQuestion.D = new Answer { CurrentAnswer = "Because he wanted to impress with his fashion sense.", Value = 0 };
                 break; 
             case 8:
-                newQuestion.Ask = new Question { whatTheyAsked = "Ruslan" };
-                newQuestion.A = new Answer { CurrentAnswer = "R", Value = 500 };
-                newQuestion.B = new Answer { CurrentAnswer = "K", Value = 300 };
-                newQuestion.C = new Answer { CurrentAnswer = "D", Value = 100 };
-                newQuestion.D = new Answer { CurrentAnswer = ".", Value = 0 };
+                newQuestion.Ask = new Question { whatTheyAsked = "Why did the chicken cross the road?" };
+                newQuestion.A = new Answer { CurrentAnswer = "Because it wanted to reach the other side!", Value = 500 };
+                newQuestion.B = new Answer { CurrentAnswer = "Because it saw the sploinky blingus on the other side!", Value = 300 };
+                newQuestion.C = new Answer { CurrentAnswer = "Because it wanted to explore new territories!", Value = 100 };
+                newQuestion.D = new Answer { CurrentAnswer = "Because it heard there were tasty bugs on the other side.", Value = 0 };
                 break;
             case 9:
-                newQuestion.Ask = new Question { whatTheyAsked = "Alex" };
-                newQuestion.A = new Answer { CurrentAnswer = "B", Value = 500 };
-                newQuestion.B = new Answer { CurrentAnswer = "W", Value = 300 };
-                newQuestion.C = new Answer { CurrentAnswer = "E", Value = 100 };
-                newQuestion.D = new Answer { CurrentAnswer = "S", Value = 0 };
+                newQuestion.Ask = new Question { whatTheyAsked = "Why did the banana go to the doctor?" };
+                newQuestion.A = new Answer { CurrentAnswer = "Because it wasn't peeling well!", Value = 500 };
+                newQuestion.B = new Answer { CurrentAnswer = "Because it slipped and fell!", Value = 300 };
+                newQuestion.C = new Answer { CurrentAnswer = "Because it wanted to get checked for bruises!", Value = 100 };
+                newQuestion.D = new Answer { CurrentAnswer = "Because it heard Adam Sandler was the doctor.", Value = 0 };
                 break;
             case 10:
-                newQuestion.Ask = new Question { whatTheyAsked = "Martin" };
-                newQuestion.A = new Answer { CurrentAnswer = "M", Value = 500 };
-                newQuestion.B = new Answer { CurrentAnswer = "R", Value = 300 };
-                newQuestion.C = new Answer { CurrentAnswer = "T", Value = 100 };
-                newQuestion.D = new Answer { CurrentAnswer = "N", Value = 0 };
+                newQuestion.Ask = new Question { whatTheyAsked = "Why did the skeleton go to the party?\r\n" };
+                newQuestion.A = new Answer { CurrentAnswer = "Because it wanted to dance!\r\n", Value = 500 };
+                newQuestion.B = new Answer { CurrentAnswer = "Because it wanted to socialize!\r\n", Value = 300 };
+                newQuestion.C = new Answer { CurrentAnswer = "Because it heard Adam Sandler was performing!", Value = 100 };
+                newQuestion.D = new Answer { CurrentAnswer = "Because it had a bone to pick with the DJ.", Value = 0 };
                 break;
         }
         return newQuestion;
