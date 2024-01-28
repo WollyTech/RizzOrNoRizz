@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public TMP_Text finalScoreText;
     public TMP_Text gradeText;
 
+    public List<Sprite> barsLevels;
+    public Image rizzometer;
+
     public int index = 0;
     public int round = 0;
 
@@ -81,6 +84,8 @@ public class GameManager : MonoBehaviour
                     gradeText.text = "Grade: Rizzgod";
             }
         }
+
+
     }
 
     public void newRound()
@@ -109,21 +114,57 @@ public class GameManager : MonoBehaviour
     {
         currentDiff.score += AllQuestions[index].A.Value;
         scoreText.text = "+" + AllQuestions[index].A.Value + "RP";
+
+        if (AllQuestions[index].A.Value <= 0) 
+            rizzometer.sprite = barsLevels[0];
+        if (AllQuestions[index].A.Value >= 100)
+            rizzometer.sprite = barsLevels[1];
+        if (AllQuestions[index].A.Value >= 300)
+            rizzometer.sprite = barsLevels[2];
+        if (AllQuestions[index].A.Value >= 500)
+            rizzometer.sprite = barsLevels[3];
     }
     public void ClickButtonB()
     {
         currentDiff.score += AllQuestions[index].B.Value;
         scoreText.text = "+" + AllQuestions[index].B.Value + "RP";
+
+        if (AllQuestions[index].B.Value <= 0) 
+            rizzometer.sprite = barsLevels[0];
+        if (AllQuestions[index].B.Value >= 100)
+            rizzometer.sprite = barsLevels[1];
+        if (AllQuestions[index].B.Value >= 300)
+            rizzometer.sprite = barsLevels[2];
+        if (AllQuestions[index].B.Value >= 500)
+            rizzometer.sprite = barsLevels[3];
     }
     public void ClickButtonC()
     {
         currentDiff.score += AllQuestions[index].C.Value / currentDiff.difficulty;
         scoreText.text = "+" + AllQuestions[index].C.Value / currentDiff.difficulty + "RP";
+
+        if (AllQuestions[index].C.Value <= 0)
+            rizzometer.sprite = barsLevels[0];
+        if (AllQuestions[index].C.Value >= 100)
+            rizzometer.sprite = barsLevels[1];
+        if (AllQuestions[index].C.Value >= 300)
+            rizzometer.sprite = barsLevels[2];
+        if (AllQuestions[index].C.Value >= 500)
+            rizzometer.sprite = barsLevels[3];
     }
     public void ClickButtonD()
     {
         currentDiff.score += AllQuestions[index].D.Value;
         scoreText.text = "+" + AllQuestions[index].D.Value + "RP";
+
+        if (AllQuestions[index].D.Value <= 0)
+            rizzometer.sprite = barsLevels[0];
+        if (AllQuestions[index].D.Value >= 100)
+            rizzometer.sprite = barsLevels[1];
+        if (AllQuestions[index].D.Value >= 300)
+            rizzometer.sprite = barsLevels[2];
+        if (AllQuestions[index].D.Value >= 500)
+            rizzometer.sprite = barsLevels[3];
     }
 
     public void GoToMenu()
